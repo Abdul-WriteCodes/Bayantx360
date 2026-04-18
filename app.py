@@ -231,7 +231,7 @@ with st.sidebar:
 
     # Logout
     st.markdown('<div style="margin-top:auto; padding-top:1rem"></div>', unsafe_allow_html=True)
-    if st.button("⎋  Sign out", use_container_width=True):
+    if st.button("⎋  Sign out", width='stretch'):
         st.session_state["authenticated"] = False
         st.rerun()
 
