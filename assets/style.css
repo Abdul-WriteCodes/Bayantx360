@@ -94,11 +94,10 @@ footer { display: none !important; }
   }
 }
 
-/* ── Hide main container box on gate/login page ── */
-[data-testid="stMainBlockContainer"] {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
+/* ── Hide sidebar on gate/login page ── */
+[data-testid="stSidebarCollapsedControl"],
+[data-testid="stSidebar"] {
+  display: none !important;
 }
 
 /* ═══════════════════════════════════════════════════════════
