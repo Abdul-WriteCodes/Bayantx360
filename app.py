@@ -91,8 +91,13 @@ footer,[data-testid="stDecoration"]{display:none!important;}
 [data-testid="stSidebar"] [data-testid="stFileUploader"]:hover{border-color:var(--gold)!important;}
 [data-testid="stSidebar"] [data-testid="stFileUploader"] section{padding:1.1rem 1rem!important;}
 [data-testid="stSidebar"] [data-testid="stFileUploader"] label,[data-testid="stSidebar"] [data-testid="stFileUploader"] p,[data-testid="stSidebar"] [data-testid="stFileUploader"] span{color:var(--t2)!important;font-size:.82rem!important;font-family:var(--sans)!important;}
-/* Fix: hide the hidden label that causes "uploadUpload" duplication */
-[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="stWidgetLabel"]{display:none!important;}
+/* Fix: aggressively hide ALL label elements inside the file uploader to prevent "uploadUpload" */
+[data-testid="stFileUploader"] [data-testid="stWidgetLabel"],
+[data-testid="stFileUploader"] label,
+[data-testid="stFileUploader"] > div > label,
+[data-testid="stFileUploader"] > label,
+[data-testid="stSidebar"] [data-testid="stFileUploader"] [data-testid="stWidgetLabel"],
+[data-testid="stSidebar"] [data-testid="stFileUploader"] label{display:none!important;height:0!important;margin:0!important;padding:0!important;overflow:hidden!important;visibility:hidden!important;}
 /* Ensure all uploader button text is clean */
 [data-testid="stFileUploader"] button span{font-family:var(--sans)!important;font-size:.84rem!important;font-weight:500!important;}
 [data-testid="stFileUploader"] [data-testid="stFileUploaderDropzone"]{background:var(--bg-3)!important;border:1.5px dashed var(--b2)!important;border-radius:var(--r-lg)!important;}
@@ -996,7 +1001,7 @@ with st.sidebar:
         st.markdown('<div class="sb-divider"></div>', unsafe_allow_html=True)
 
     st.markdown('<span class="sb-label">&#128196; Upload Papers</span>', unsafe_allow_html=True)
-    uploaded = st.file_uploader("Upload", type=["pdf","docx","txt"], accept_multiple_files=True, label_visibility="collapsed", key="sidebar_uploader")
+    uploaded = st.file_uploader("", type=["pdf","docx","txt"], accept_multiple_files=True, label_visibility="collapsed", key="sidebar_uploader")
     if uploaded:
         queued = st.session_state.get("queued_files",[]); existing = {f["name"] for f in queued}
         for f in uploaded:
