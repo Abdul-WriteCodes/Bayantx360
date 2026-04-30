@@ -1001,7 +1001,7 @@ if not st.session_state.access_granted:
           </ul>
         </div>
         """, unsafe_allow_html=True)
-        st.link_button("Get Started →", "https://flutterwave.com/pay/YOUR_STARTER_LINK", width="stretch")
+        st.link_button("Get Started →", "https://flutterwave.com/pay/n70wl8ndxd03", width="stretch")
 
     with pc2:
         st.markdown("""
@@ -1019,7 +1019,7 @@ if not st.session_state.access_granted:
           </ul>
         </div>
         """, unsafe_allow_html=True)
-        st.link_button("Buy Credits →", "https://flutterwave.com/pay/YOUR_STANDARD_LINK", width="stretch")
+        st.link_button("Buy Credits →", "https://flutterwave.com/pay/k7sit2jbmaki", width="stretch")
 
     with pc3:
         st.markdown("""
@@ -1037,7 +1037,7 @@ if not st.session_state.access_granted:
           </ul>
         </div>
         """, unsafe_allow_html=True)
-        st.link_button("Buy Credits →", "https://flutterwave.com/pay/YOUR_PRO_LINK", width="stretch")
+        st.link_button("Buy Credits →", "https://flutterwave.com/pay/ajkpq3aexkns", width="stretch")
 
     # ── Access gate ──
     st.markdown("""
